@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         }
     }
     MainWidget w;
-    Game game{w.graphicsView(), &w};
+    Game game{w.graphicsView()};
     w.show();
     return a.exec();
 }
