@@ -41,6 +41,10 @@ TRANSLATIONS += \
 CONFIG += lrelease
 CONFIG += embed_translations
 
+DEFINES += QT_RESTRICTED_CAST_FROM_ASCII \
+    QT_NO_CAST_TO_ASCII \
+    QT_NO_CAST_FROM_BYTEARRAY
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
