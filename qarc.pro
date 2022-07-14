@@ -23,17 +23,21 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    game.cpp \
     main.cpp \
     mainwidget.cpp
 
 HEADERS += \
+    game.h \
     mainwidget.h
 
 FORMS += \
     mainwidget.ui
 
 TRANSLATIONS += \
-    qarc_en_001.ts
+    qarc_en.ts \
+    qarc_ru.ts
+
 CONFIG += lrelease
 CONFIG += embed_translations
 

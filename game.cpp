@@ -14,28 +14,19 @@
    limitations under the License.
 */
 
-#include "mainwidget.h"
 #include "game.h"
 
-#include <QApplication>
-#include <QLocale>
-#include <QTranslator>
+#include <QGraphicsView>
 
-int main(int argc, char *argv[])
+Game::Game(QGraphicsView *graphicsView, QObject *parent)
+    : QObject{parent},
+      graphicsView{graphicsView}
 {
-    QApplication a(argc, argv);
+    graphicsScene = new QGraphicsScene{this};
+    graphicsView->setScene(graphicsScene);
+}
 
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "qarc_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
-            break;
-        }
-    }
-    MainWidget w;
-    Game game{w.graphicsView(), &w};
-    w.show();
-    return a.exec();
+Game::~Game()
+{
+    graphicsView->setScene(nullptr);
 }

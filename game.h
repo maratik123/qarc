@@ -14,22 +14,26 @@
    limitations under the License.
 */
 
-#include "mainwidget.h"
-#include "ui_mainwidget.h"
+#ifndef GAME_H
+#define GAME_H
 
-MainWidget::MainWidget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::MainWidget)
-{
-    ui->setupUi(this);
-}
+#include <QObject>
 
-MainWidget::~MainWidget()
-{
-    delete ui;
-}
+class QGraphicsView;
+class QGraphicsScene;
 
-QGraphicsView *MainWidget::graphicsView() const
+class Game : public QObject
 {
-    return ui->graphicsView;
-}
+    Q_OBJECT
+public:
+    explicit Game(QGraphicsView *graphicsView, QObject *parent = nullptr);
+    virtual ~Game();
+
+signals:
+
+private:
+    QGraphicsView *graphicsView;
+    QGraphicsScene *graphicsScene;
+};
+
+#endif // GAME_H

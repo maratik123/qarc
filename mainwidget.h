@@ -23,6 +23,8 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWidget; }
 QT_END_NAMESPACE
 
+class QGraphicsView;
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
@@ -30,6 +32,7 @@ class MainWidget : public QWidget
 public:
     MainWidget(QWidget *parent = nullptr);
     ~MainWidget();
+    QGraphicsView *graphicsView() const;
 
 private:
     Ui::MainWidget *ui;
