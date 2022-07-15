@@ -14,30 +14,19 @@
    limitations under the License.
 */
 
-#ifndef MAINWIDGET_H
-#define MAINWIDGET_H
+#ifndef GAMEPLAYEVENTARGS_H
+#define GAMEPLAYEVENTARGS_H
 
-#include <QWidget>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWidget; }
-QT_END_NAMESPACE
+#include <QVector2D>
 
-class QGraphicsView;
-
-class MainWidget : public QWidget
+class GameplayEventArgs
 {
-    Q_OBJECT
-
 public:
-    MainWidget(QWidget *parent = nullptr);
-    ~MainWidget();
-    QGraphicsView *graphicsView() const;
-
-protected:
-    void keyPressEvent(QKeyEvent *event) override;
+    QVector2D playerPos() const { return m_playerPos; }
 
 private:
-    Ui::MainWidget *ui;
+    QVector2D m_playerPos;
 };
-#endif // MAINWIDGET_H
+
+#endif // GAMEPLAYEVENTARGS_H

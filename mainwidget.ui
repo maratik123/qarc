@@ -18,6 +18,17 @@
     <widget class="QGraphicsView" name="graphicsView"/>
    </item>
   </layout>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

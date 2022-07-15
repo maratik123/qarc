@@ -24,11 +24,15 @@ CONFIG += c++17
 
 SOURCES += \
     game.cpp \
+    gameplayeventargs.cpp \
+    gameplaymodel.cpp \
     main.cpp \
     mainwidget.cpp
 
 HEADERS += \
     game.h \
+    gameplayeventargs.h \
+    gameplaymodel.h \
     mainwidget.h
 
 FORMS += \

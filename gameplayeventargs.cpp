@@ -14,30 +14,4 @@
    limitations under the License.
 */
 
-#ifndef MAINWIDGET_H
-#define MAINWIDGET_H
-
-#include <QWidget>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWidget; }
-QT_END_NAMESPACE
-
-class QGraphicsView;
-
-class MainWidget : public QWidget
-{
-    Q_OBJECT
-
-public:
-    MainWidget(QWidget *parent = nullptr);
-    ~MainWidget();
-    QGraphicsView *graphicsView() const;
-
-protected:
-    void keyPressEvent(QKeyEvent *event) override;
-
-private:
-    Ui::MainWidget *ui;
-};
-#endif // MAINWIDGET_H
+#include "gameplayeventargs.h"
